@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM ubuntu:20.04
+FROM ubuntu:16.04
 
 # Copies shopify .deb file for installation
 COPY shopify-cli-2.6.6.deb /shopify-cli-2.6.6.deb
