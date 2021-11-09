@@ -1,13 +1,10 @@
 # Container image that runs your code
-FROM node:14.18-alpine
+FROM ruby:alpine3.14
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
-RUN apk --update add git
-
-RUN git clone https://github.com/nicolasalliaume/shopify-cli
-RUN ./cli.js
+RUN gem update shopify-cli
 RUN chmod 777 entrypoint.sh
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
