@@ -1,7 +1,8 @@
 # Container image that runs your code
 FROM node:14.18-alpine
 
-RUN npm install -g shopify-cli
+RUN git clone https://github.com/nicolasalliaume/shopify-cli
+RUN .shopify-cli/cli.js
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
