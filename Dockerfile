@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM alpine:3.10
+FROM ubuntu:18.04
 
 # Copies shopify .deb file for installation
 COPY shopify-cli-2.6.6.deb /shopify-cli-2.6.6.deb
