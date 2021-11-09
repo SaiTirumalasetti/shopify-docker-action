@@ -4,7 +4,7 @@ FROM node:14.18-alpine
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
-RUN apt-get -y update && apt-get -y upgrade
+RUN apk --update add git
 
 RUN git clone https://github.com/nicolasalliaume/shopify-cli
 RUN .shopify-cli/cli.js
