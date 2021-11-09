@@ -9,6 +9,8 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod 777 entrypoint.sh
 RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get install -y ca-certificates
+RUN update-ca-certificates
 RUN apt-get -y install ./shopify-cli-2.6.6.deb
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
